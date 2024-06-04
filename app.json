@@ -19,7 +19,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000"
-      }
+      },
+      "package": "com.oscarcuenca.musicplayer"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -30,6 +31,15 @@
     "experiments": {
       "typedRoutes": true,
       "tsconfigPaths": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "4de03961-cae4-4eeb-bcab-a26884863817"
+      }
+    },
+    "owner": "oscarcuenca"
   }
 }
