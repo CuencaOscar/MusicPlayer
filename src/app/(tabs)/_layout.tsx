@@ -1,13 +1,28 @@
 import { colors, fontSize } from '@/constants/tokens'
 import { BlurView } from 'expo-blur'
 import { Tabs } from 'expo-router'
-import { StyleSheet, View } from 'react-native'
+import { Platform, StyleSheet, View } from 'react-native'
 import { FontAwesome, MaterialCommunityIcons, Ionicons, FontAwesome6 } from '@expo/vector-icons'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { FloatingPlayer } from '@/components/FloatingPlayer'
 
 // Height of the tab bar content above the bottom safe area (default 49 + paddingTop 8).
 const TAB_BAR_HEIGHT = 57
+
+const tabBarShape = {
+	...StyleSheet.absoluteFillObject,
+	overflow: 'hidden' as const,
+	borderTopLeftRadius: 20,
+	borderTopRightRadius: 20,
+}
+
+// expo-blur only blurs reliably on iOS and the web; Android gets a solid surface so the list never shows through.
+const TabBarBackground = () =>
+	Platform.OS === 'android' ? (
+		<View style={[tabBarShape, { backgroundColor: 'rgba(22, 22, 24, 0.98)' }]} />
+	) : (
+		<BlurView intensity={80} tint="dark" style={tabBarShape} />
+	)
 
 const TabsNavigation = () => {
 	const { bottom } = useSafeAreaInsets()
@@ -24,6 +39,7 @@ const TabsBar = () => {
 		<Tabs
 			screenOptions={{
 				tabBarActiveTintColor: colors.primary,
+				tabBarInactiveTintColor: colors.textMuted,
 				tabBarLabelStyle: {
 					fontSize: fontSize.xs,
 					fontWeight: 500,
@@ -36,17 +52,7 @@ const TabsBar = () => {
 					borderTopWidth: 0,
 					paddingTop: 8,
 				},
-				tabBarBackground: () => (
-					<BlurView
-						intensity={95}
-						style={{
-							...StyleSheet.absoluteFillObject,
-							overflow: 'hidden',
-							borderTopLeftRadius: 20,
-							borderTopRightRadius: 20,
-						}}
-					/>
-				),
+				tabBarBackground: TabBarBackground,
 			}}
 		>
 			<Tabs.Screen
