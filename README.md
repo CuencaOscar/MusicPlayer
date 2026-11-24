@@ -4,6 +4,8 @@ Mobile music player built with **React Native**, **Expo** and **Expo Router**. I
 library and organises them in tabs — **Songs**, **Artists**, **Playlists** and **Favorites** — with a floating
 mini player that stays above the tab bar while you browse.
 
+**▶ Live demo: [cuencaoscar.github.io/MusicPlayer](https://cuencaoscar.github.io/MusicPlayer/)** (web build of the same app)
+
 ![CI](https://github.com/CuencaOscar/MusicPlayer/actions/workflows/ci.yml/badge.svg)
 ![React Native](https://img.shields.io/badge/React_Native-61DAFB?logo=react&logoColor=black)
 ![Expo](https://img.shields.io/badge/Expo-000020?logo=expo&logoColor=white)
