@@ -4,6 +4,7 @@ Mobile music player built with **React Native**, **Expo** and **Expo Router**. I
 library and organises them in tabs — **Songs**, **Artists**, **Playlists** and **Favorites** — with a floating
 mini player that stays above the tab bar while you browse.
 
+![CI](https://github.com/CuencaOscar/MusicPlayer/actions/workflows/ci.yml/badge.svg)
 ![React Native](https://img.shields.io/badge/React_Native-61DAFB?logo=react&logoColor=black)
 ![Expo](https://img.shields.io/badge/Expo-000020?logo=expo&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
@@ -23,7 +24,7 @@ mini player that stays above the tab bar while you browse.
 
 - React Native 0.74 · Expo SDK 51 · TypeScript
 - Expo Router (file-based navigation), `expo-av`, `expo-image`, `expo-blur`
-- ESLint + Prettier
+- ESLint + Prettier, Jest (`jest-expo`) and GitHub Actions
 
 ## Project structure
 
@@ -43,6 +44,7 @@ src/
 ```bash
 npm install
 npx expo start
+npm run typecheck && npm run lint && npm test
 ```
 
 Build an Android release locally with `cd android && ./gradlew assembleRelease`.
