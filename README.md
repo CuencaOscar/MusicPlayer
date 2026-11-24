@@ -5,6 +5,7 @@ library and organises them in tabs — **Songs**, **Artists**, **Playlists** and
 mini player that stays above the tab bar while you browse.
 
 **▶ Live demo: [cuencaoscar.github.io/MusicPlayer](https://cuencaoscar.github.io/MusicPlayer/)** (web build of the same app)
+· **[⬇ Android APK](https://github.com/CuencaOscar/MusicPlayer/releases/latest)**
 
 ![CI](https://github.com/CuencaOscar/MusicPlayer/actions/workflows/ci.yml/badge.svg)
 ![React Native](https://img.shields.io/badge/React_Native-61DAFB?logo=react&logoColor=black)
