@@ -1,6 +1,5 @@
-import unknownArtistImage from "@/assets/unknown_artist.png"
-import unknownTrackImage from "@/assets/unknown_track.png"
-import { Image } from "react-native"
+import { Asset } from 'expo-asset'
 
-export const unknownArtistImageUri = Image.resolveAssetSource(unknownArtistImage).uri
-export const unknownTrackImageUri = Image.resolveAssetSource(unknownTrackImage).uri
+// Asset.fromModule resolves bundled images on native and on the web build.
+export const unknownArtistImageUri = Asset.fromModule(require('@/assets/unknown_artist.png')).uri
+export const unknownTrackImageUri = Asset.fromModule(require('@/assets/unknown_track.png')).uri

@@ -23,14 +23,20 @@
       "package": "com.oscarcuenca.musicplayer"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "output": "single",
+      "name": "MusicPlayer",
+      "shortName": "MusicPlayer"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      "expo-asset"
     ],
     "experiments": {
       "typedRoutes": true,
-      "tsconfigPaths": true
+      "tsconfigPaths": true,
+      "baseUrl": "/MusicPlayer"
     },
     "extra": {
       "router": {
