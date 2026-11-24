@@ -1,12 +1,12 @@
-import { defaultStyles } from "@/styles"
-import { Text, View } from "react-native"
+import { TracksList } from '@/components/TracksList'
+import { favorites } from '@/helpers/library'
+import { defaultStyles } from '@/styles'
+import { View } from 'react-native'
 
-const FavoritesScreen = () => {
-    return (
-        <View style={defaultStyles.container}>
-            <Text style={defaultStyles.text}>Favorites Screen</Text>
-        </View>
-    )
-}
+const FavoritesScreen = () => (
+	<View style={defaultStyles.container}>
+		<TracksList tracks={favorites} contentInsetAdjustmentBehavior="automatic" />
+	</View>
+)
 
 export default FavoritesScreen

@@ -8,14 +8,15 @@ reusable track list and a shared design-token system for colors, spacing and typ
 ![Expo](https://img.shields.io/badge/Expo-000020?logo=expo&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
 
-<p align="center"><img src="docs/songs.png" alt="Songs tab running on Android" width="320"></p>
+<p align="center"><img src="docs/screenshots.png" alt="Songs, Artists, Playlists and Favorites tabs on Android" width="900"></p>
 
 ## Status
 
 | Area | Status |
 |---|---|
 | Tab navigation with nested stacks (Expo Router) | ✅ Done |
-| Track list and track item components | ✅ Done |
+| Songs, Artists, Playlists and Favorites built from the local library | ✅ Done |
+| Track list, grouped lists, artwork fallback and empty states | ✅ Done |
 | Design tokens and shared styles | ✅ Done |
 | Audio playback | 🚧 Planned |
 

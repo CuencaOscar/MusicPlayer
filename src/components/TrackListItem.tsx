@@ -2,7 +2,7 @@ import { unknownTrackImageUri } from '@/constants/images'
 import { colors, fontSize } from '@/constants/tokens'
 import { defaultStyles } from '@/styles'
 import { TouchableHighlight, View, StyleSheet, Text } from 'react-native'
-import { Image } from 'expo-image';
+import { Artwork } from './Artwork'
 
 export type TrackListItemProps = {
 	track: { title: string; image?: string; artist?: string }
@@ -14,10 +14,9 @@ export const TrackListItem = ({ track }: TrackListItemProps) => {
 		<TouchableHighlight>
 			<View style={styles.trackItemContainer}>
 				<View>
-					<Image
-						source={{
-							uri: track.image ?? unknownTrackImageUri,
-						}}
+					<Artwork
+						uri={track.image}
+						fallbackUri={unknownTrackImageUri}
 						style={{
 							...styles.trackArtworkImage,
 							opacity: isActiveTrack ? 0.6 : 1,

@@ -1,12 +1,12 @@
-import { defaultStyles } from "@/styles"
-import { Text, View } from "react-native"
+import { GroupList } from '@/components/GroupList'
+import { playlists } from '@/helpers/library'
+import { defaultStyles } from '@/styles'
+import { View } from 'react-native'
 
-const PlaylistsScreen = () => {
-    return (
-        <View style={defaultStyles.container}>
-            <Text style={defaultStyles.text}>Playlists Screen</Text>
-        </View>
-    )
-}
+const PlaylistsScreen = () => (
+	<View style={defaultStyles.container}>
+		<GroupList groups={playlists} variant="playlist" />
+	</View>
+)
 
 export default PlaylistsScreen
