@@ -1,5 +1,6 @@
 // import { NativeStackNavigationOptions } from "react-native-screens/lib/typescript/native-stack/types";
 import { NativeStackNavigationOptions } from "@react-navigation/native-stack"
+import { Platform } from "react-native"
 import { colors } from "./tokens"
 
 export const StackScreenWithSearchBar: NativeStackNavigationOptions = {
@@ -8,7 +9,9 @@ export const StackScreenWithSearchBar: NativeStackNavigationOptions = {
         backgroundColor: colors.background,
     },
     headerTintColor: colors.text,
-    headerTransparent: true,
+    // Large transparent headers are an iOS feature; Android gets a solid header.
+    headerTransparent: Platform.OS === 'ios',
+    headerStyle: { backgroundColor: colors.background },
     headerBlurEffect: 'prominent',
     headerShadowVisible: false,
 }

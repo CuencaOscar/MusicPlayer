@@ -5,7 +5,7 @@ import { ScrollView, Text, View } from "react-native"
 const SongsScreen = () => {
     return (
         <View style={defaultStyles.container}>
-            <ScrollView>
+            <ScrollView contentInsetAdjustmentBehavior="automatic">
                 <TracksList scrollEnabled={false}/>
             </ScrollView>
         </View>

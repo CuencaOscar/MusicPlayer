@@ -8,7 +8,8 @@ export const TracksList = ({...flatlistProps}: TracksListProps) => {
 	return (
 		<FlatList
 			data={library}
-			renderItem={({ item: track }) => <TrackListItem track={{ ...track, image: track.artwork }} {...flatlistProps}/>}
+			renderItem={({ item: track }) => <TrackListItem track={{ ...track, image: track.artwork }} />}
+			{...flatlistProps}
 		/>
 	)
 }
