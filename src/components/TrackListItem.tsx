@@ -2,16 +2,20 @@ import { unknownTrackImageUri } from '@/constants/images'
 import { colors, fontSize } from '@/constants/tokens'
 import { defaultStyles } from '@/styles'
 import { TouchableHighlight, View, StyleSheet, Text } from 'react-native'
+import { Ionicons } from '@expo/vector-icons'
 import { Artwork } from './Artwork'
 
 export type TrackListItemProps = {
 	track: { title: string; image?: string; artist?: string }
+	isActive?: boolean
+	isPlaying?: boolean
+	onPress?: () => void
 }
 
-export const TrackListItem = ({ track }: TrackListItemProps) => {
-	const isActiveTrack = false
+export const TrackListItem = ({ track, isActive = false, isPlaying = false, onPress }: TrackListItemProps) => {
+	const isActiveTrack = isActive
 	return (
-		<TouchableHighlight>
+		<TouchableHighlight onPress={onPress} underlayColor="rgba(255,255,255,0.06)">
 			<View style={styles.trackItemContainer}>
 				<View>
 					<Artwork
@@ -22,6 +26,14 @@ export const TrackListItem = ({ track }: TrackListItemProps) => {
 							opacity: isActiveTrack ? 0.6 : 1,
 						}}
 					/>
+					{isActiveTrack && (
+						<Ionicons
+							name={isPlaying ? 'stats-chart' : 'play'}
+							size={20}
+							color={colors.text}
+							style={styles.activeIcon}
+						/>
+					)}
 				</View>
 				<View style={{ width: '100%' }}>
 					<Text
@@ -56,6 +68,11 @@ const styles = StyleSheet.create({
 		borderRadius: 8,
 		width: 50,
 		height: 50,
+	},
+	activeIcon: {
+		position: 'absolute',
+		top: 15,
+		left: 15,
 	},
 	trackTitletext: {
 		...defaultStyles.text,

@@ -1,10 +1,25 @@
 import { colors, fontSize } from '@/constants/tokens'
 import { BlurView } from 'expo-blur'
 import { Tabs } from 'expo-router'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import { FontAwesome, MaterialCommunityIcons, Ionicons, FontAwesome6 } from '@expo/vector-icons'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { FloatingPlayer } from '@/components/FloatingPlayer'
+
+// Height of the tab bar content above the bottom safe area (default 49 + paddingTop 8).
+const TAB_BAR_HEIGHT = 57
 
 const TabsNavigation = () => {
+	const { bottom } = useSafeAreaInsets()
+	return (
+		<View style={{ flex: 1 }}>
+			<TabsBar />
+			<FloatingPlayer bottom={TAB_BAR_HEIGHT + bottom + 8} />
+		</View>
+	)
+}
+
+const TabsBar = () => {
 	return (
 		<Tabs
 			screenOptions={{
@@ -45,7 +60,9 @@ const TabsNavigation = () => {
 				name="playlists"
 				options={{
 					title: 'Playlists',
-					tabBarIcon: ({ color }) => <MaterialCommunityIcons name="playlist-play" size={28} color={color} />,
+					tabBarIcon: ({ color }) => (
+						<MaterialCommunityIcons name="playlist-play" size={28} color={color} />
+					),
 				}}
 			/>
 			<Tabs.Screen
