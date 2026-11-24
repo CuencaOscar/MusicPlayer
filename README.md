@@ -12,7 +12,7 @@ mini player that stays above the tab bar while you browse.
 ![Expo](https://img.shields.io/badge/Expo-000020?logo=expo&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
 
-<p align="center"><img src="docs/screenshots.png" alt="Songs with the mini player, Artists, Playlists and Favorites on Android" width="900"></p>
+<p align="center"><img src="docs/demo.gif" alt="Playing a song, then browsing Artists, Playlists and Favorites on Android" width="340"></p>
 
 ## Features
 
@@ -22,6 +22,8 @@ mini player that stays above the tab bar while you browse.
 - **Artists and Playlists** grouped from the library, **Favorites** from the track rating.
 - Artwork fallback when a remote image fails to load, and empty states for lists without content.
 - Shared design tokens for colours, spacing and typography; strict TypeScript, ESLint and Prettier.
+
+<p align="center"><img src="docs/screenshots.png" alt="Songs with the mini player, Artists, Playlists and Favorites on Android" width="900"></p>
 
 ## Tech stack
 
