@@ -19,7 +19,7 @@ const tabBarShape = {
 // expo-blur only blurs reliably on iOS and the web; Android gets a solid surface so the list never shows through.
 const TabBarBackground = () =>
 	Platform.OS === 'android' ? (
-		<View style={[tabBarShape, { backgroundColor: 'rgba(22, 22, 24, 0.98)' }]} />
+		<View style={[tabBarShape, { backgroundColor: '#161618' }]} />
 	) : (
 		<BlurView intensity={80} tint="dark" style={tabBarShape} />
 	)
