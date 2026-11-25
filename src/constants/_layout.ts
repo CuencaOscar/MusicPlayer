@@ -12,8 +12,8 @@ export const StackScreenWithSearchBar: NativeStackNavigationOptions = {
 	// Large transparent headers are an iOS feature; Android gets a solid header.
 	headerTransparent: Platform.OS === 'ios',
 	headerStyle: { backgroundColor: colors.background },
-	// Android has no large title, so the regular title is styled to match it.
-	headerTitleStyle: Platform.OS === 'android' ? { fontSize: 30, fontWeight: '800' } : undefined,
+	// Only iOS has native large titles; Android and the web get a styled regular title.
+	headerTitleStyle: Platform.OS !== 'ios' ? { fontSize: 30, fontWeight: '800' } : undefined,
 	headerBlurEffect: 'prominent',
 	headerShadowVisible: false,
 }
