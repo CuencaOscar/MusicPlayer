@@ -23,8 +23,6 @@ mini player that stays above the tab bar while you browse.
 - Artwork fallback when a remote image fails to load, and empty states for lists without content.
 - Shared design tokens for colours, spacing and typography; strict TypeScript, ESLint and Prettier.
 
-<p align="center"><img src="docs/screenshots.png" alt="Songs with the mini player, Artists, Playlists and Favorites on Android" width="900"></p>
-
 ## Tech stack
 
 - React Native 0.74 · Expo SDK 51 · TypeScript
